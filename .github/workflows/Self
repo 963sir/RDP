@@ -1,0 +1,14 @@
+# .github/workflows/test-runner.yml
+name: Test Self-Hosted Runner
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: [self-hosted, Windows]
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Print runner info
+        run: echo "Hello from %COMPUTERNAME% on a self-hosted runner!"
